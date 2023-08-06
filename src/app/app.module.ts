@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ViewPostComponent } from './pages/view-post/view-post.component';
 import { FormComponent } from './componets/form/form.component';
 import { PostCardComponent } from './componets/post-card/post-card.component';
+import { C404Component } from './pages/c404/c404.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PostCardComponent } from './componets/post-card/post-card.component';
     HomeComponent,
     ViewPostComponent,
     FormComponent,
-    PostCardComponent
+    PostCardComponent,
+    C404Component
   ],
   imports: [
     BrowserModule,
