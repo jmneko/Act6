@@ -9,8 +9,8 @@ const routes: Routes = [
   {path:"",pathMatch: 'full', redirectTo: 'home'},
   {path: "home", component: HomeComponent},
   {path:"newuser", component: FormComponent},
-  {path: "updateuser/:iduser", component: FormComponent},
-  {path: "viewuser/:iduser", component: ViewUserComponent},
+  {path: "updateuser/:_iduser", component: FormComponent},
+  {path: "viewuser/:_iduser", component: ViewUserComponent},
   {path: "**", component: C404Component}
 ];
 
