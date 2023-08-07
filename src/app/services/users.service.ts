@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/Http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, lastValueFrom } from 'rxjs';
 import { User } from '../interfaces/user.interface';
@@ -6,7 +6,7 @@ import { User } from '../interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class PostsService {
+export class UsersService {
 
   httpClient = inject(HttpClient);
   private baseUrl: string = "https://peticiones.online/api/users/";
@@ -14,10 +14,9 @@ export class PostsService {
   constructor() { }
 
 
-  getAll(): Promise<any[]> {
+  getAll(): Promise<any> {
 
-
-    return lastValueFrom(this.httpClient.get<any[]>(this.baseUrl))
+    return lastValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
 
 
