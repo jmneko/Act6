@@ -13,13 +13,13 @@ export class UsersService {
 
   constructor() { }
 
-
+ 
   getAll(): Promise<any> {
 
     return lastValueFrom(this.httpClient.get<any>(this.baseUrl))
   }
 
-
+  
 
   getById(_id: string): Observable<User> {
     return this.httpClient.get<any>(`${this.baseUrl}${_id}`)

@@ -12,7 +12,7 @@ export class HomeComponent {
   arrUser: User[] = [];
   usersService = inject(UsersService);
 
-
+  
   ngOnInit(): void {
 
     this.usersService.getAll()
