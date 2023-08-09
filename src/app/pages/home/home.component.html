@@ -2,12 +2,36 @@
 
 
     <div class="row g-3">
-
         <article class="col-12 col-md-6 col-lg-4" *ngFor="let user of arrUser">
             <app-user-card [miUser]="user"></app-user-card>
         </article>
-
     </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <ul class="pagination">
+                <li class="page-item">
+                    <button class="page-link" (click)="goPage(currentPage - 1)" [disabled]="currentPage === 1">
+                        Anterior
+                    </button>
+                <li class="page-item">
+                    <button class="page-link" (click)="goPage(currentPage - 1)" [disabled]="currentPage === 1">
+                        1
+                    </button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" (click)="goPage(currentPage + 1)" [disabled]="currentPage === totalPages">
+                        2
+                    </button>
+                </li>
+                <li class="page-item">
+                    <button class="page-link" (click)="goPage(currentPage + 1)" [disabled]="currentPage === totalPages">
+                        Siguiente
+                    </button>
+                </li>
+            </ul>
+        </ul>
+    </nav>
 
 
 </section>

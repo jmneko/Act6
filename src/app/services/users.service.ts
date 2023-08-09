@@ -14,15 +14,16 @@ export class UsersService {
   constructor() { }
 
  
-  getAll(): Promise<any> {
+  getAll(page:number = 1): Promise<any> {
 
-    return lastValueFrom(this.httpClient.get<any>(this.baseUrl))
+    return lastValueFrom(this.httpClient.get<any>(`${this.baseUrl}?page=${page}`))
+    
   }
 
   
 
   getById(_id: string): Observable<User> {
-    return this.httpClient.get<any>(`${this.baseUrl}${_id}`)
+    return this.httpClient.get<User>(`${this.baseUrl}${_id}`)
   }
 
 

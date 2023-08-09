@@ -10,17 +10,25 @@ import { UsersService } from 'src/app/services/users.service';
 export class HomeComponent {
 
   arrUser: User[] = [];
+  totalPages: number =1;
+  currentPage: number =1;
   usersService = inject(UsersService);
 
   
   ngOnInit(): void {
-
-    this.usersService.getAll()
-    .then( (response) => {
-      this.arrUser = response.results;
-    })
-    .catch( (error) => {
-      console.log(error);
-    })
+    this.goPage()
   }
+async goPage(numberPage: number = 1): Promise<void> {
+
+  try {
+      let response = await this.usersService.getAll(numberPage)
+      this.currentPage = response.page;
+      this.arrUser = response.results;
+      this.totalPages = response.total_pages;
+      
+    } catch {
+      console.log(Error)}
+  }
+          
+
 }
