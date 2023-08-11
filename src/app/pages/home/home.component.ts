@@ -22,9 +22,9 @@ async goPage(numberPage: number = 1): Promise<void> {
 
   try {
       let response = await this.usersService.getAll(numberPage)
-      this.currentPage = response.page;
-      this.arrUser = response.results;
       this.totalPages = response.total_pages;
+      this.arrUser = response.results;
+      this.currentPage = response.page;
       
     } catch {
       console.log(Error)}
