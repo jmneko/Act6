@@ -1,0 +1,29 @@
+.usuario {
+  font-size: 1.5rem;
+  margin-left: 15%;
+  align-items: center;
+  text-align: center;
+}
+
+.datos {
+  text-align: center;
+  margin-bottom: 10%;
+  font-size: 3rem;
+  font-weight: 900;
+  color: teal;
+}
+
+.rotate-scale-up-horizontal {
+  animation: rotate-scale-up-horizontal 1s linear both;
+}
+@keyframes rotate-scale-up-horizontal {
+  0% {
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    transform: scale(2) rotateX(-180deg);
+  }
+  100% {
+    transform: scale(1) rotateX(-360deg);
+  }
+}
