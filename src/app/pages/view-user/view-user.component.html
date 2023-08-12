@@ -9,11 +9,11 @@
 
         <div class="user flex-grow-1">
             <p class="data">DATOS</p>
-            <p><strong>Nombre de usuario:</strong> {{oneUser.username}}</p>
-            <p><strong>Email:</strong> {{oneUser.email}}</p>
+            <p class="data__user"><strong>Nombre de usuario:</strong> {{oneUser.username}}</p>
+            <p class="data__user"><strong>Email:</strong> {{oneUser.email}}</p>
 
             <div class="container mt-5">
-                <button class="btn btn-outline-danger border-2">Borrar
+                <button class="btn btn-outline-danger border-2" (click)="deleteUser(oneUser._id)">Borrar
                     <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
                         class="bi bi-trash3-fill ms-5" viewBox="0 0 16 16">
                         <path

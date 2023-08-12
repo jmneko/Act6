@@ -27,4 +27,13 @@ export class UsersService {
   }
 
 
+  delete(_id: string): Promise <User[]> {
+
+    return lastValueFrom(this.httpClient.delete<User[]>(`${this.baseUrl}${_id}`))
+  }
+
+  deleteOneUserList(_id: string): Promise <any> {
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${_id}`))
+  }
+
 }
