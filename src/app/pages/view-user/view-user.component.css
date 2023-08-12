@@ -13,6 +13,28 @@
   color: teal;
 }
 
+.selector {
+  margin-top: 5%;
+  margin-left: 9%;
+  display: flex;
+  width: 80%;
+  height: 430px;
+}
+
+.selector img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  transition: 0.5s ease;
+  filter: grayscale(100%) opacity(60%);
+}
+
+.selector img:hover {
+  cursor: pointer;
+  width: 300px;
+  filter: none;
+}
+
 .rotate-scale-up-horizontal {
   animation: rotate-scale-up-horizontal 1s linear both;
 }

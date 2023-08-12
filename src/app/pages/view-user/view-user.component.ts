@@ -1,4 +1,4 @@
-import { Component, inject,  } from '@angular/core';
+import { Component, inject, } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
@@ -9,6 +9,8 @@ import { UsersService } from 'src/app/services/users.service';
   styleUrls: ['./view-user.component.css']
 })
 export class ViewUserComponent {
+
+  
 
 oneUser!: User | any;
 activatedRoute = inject(ActivatedRoute)
