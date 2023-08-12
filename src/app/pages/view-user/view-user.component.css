@@ -6,7 +6,7 @@
 }
 
 .name {
-  color: rgb(11, 81, 81);
+  color: rgb(181, 255, 151);
   font-weight: 900;
 }
 
@@ -15,7 +15,11 @@
   margin-bottom: 10%;
   font-size: 3rem;
   font-weight: 700;
-  color: rgb(11, 81, 81);
+  color: rgb(181, 255, 151);
+}
+
+.data__user {
+  color: rgb(255, 255, 255);
 }
 
 .selector {
