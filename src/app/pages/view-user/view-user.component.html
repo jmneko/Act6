@@ -1,5 +1,5 @@
 <section class="container mt-3 ">
-    <h1 class="text-center text-uppercase fw-bold">{{oneUser?.first_name}}
+    <h1 class="name text-center text-uppercase">{{oneUser?.first_name}}
         {{oneUser.last_name}}</h1>
     <div class="mt-5 d-flex align-items-center">
         <div class="flex-shrink-0">
@@ -7,8 +7,8 @@
                 class="img-fluid rounded border border-warning border-4 shadow rotate-scale-up-horizontal">
         </div>
 
-        <div class="usuario flex-grow-1">
-            <p class="datos">DATOS</p>
+        <div class="user flex-grow-1">
+            <p class="data">DATOS</p>
             <p><strong>Nombre de usuario:</strong> {{oneUser.username}}</p>
             <p><strong>Email:</strong> {{oneUser.email}}</p>
 
@@ -30,9 +30,9 @@
                     </svg>
                 </button>
 
-                <button class="btn btn-outline-success border-2" [routerLink]="['/home']">
+                <button class="btn btn-outline-light border-2" [routerLink]="['/home']">
                     Volver a listado
-                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
                         class="bi bi-arrow-return-left ms-3" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
