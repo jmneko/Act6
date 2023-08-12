@@ -2,6 +2,9 @@ import { Component, Input, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
   selector: 'app-user-card',
@@ -16,13 +19,48 @@ export class UserCardComponent {
   oneUser!: User | any;
 
 
-  async deleteUser(id: any): Promise <void> {
 
-    alert('¿De verdad quieres borrar este usuario?')
-    let response = await this.usersServices.deleteOneUserList(id);
-    if(response){
-      this.router.navigate(['/home']);
-    }
+
+  async deleteUser(id: string): Promise<void> {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    });
+  
+    swalWithBootstrapButtons.fire({
+      title: '¿Estás seguro de eliminar al usuario?',
+      text: "No podrás volver a recuperarlo",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: 'Cancelar',
+      reverseButtons: true
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          await this.usersServices.deleteOneUserList(id);
+          swalWithBootstrapButtons.fire(
+            '¡Borrado!',
+            'El usuario ha sido borrado',
+            'success'
+          );
+          this.router.navigate(['/home']);
+        } catch (error) {
+          console.log(error);
+          Swal.fire('Error', 'An error occurred while deleting the user.', 'error');
+        }
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'El usuario NO ha sido borrado ;)',
+          'error'
+        );
+      }
+    });
   }
+  
 
 }
