@@ -1,0 +1,18 @@
+.logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+input.ng-invalid.ng-dirty {
+  border: 3px solid rgb(219, 66, 66);
+}
+
+.error {
+  color: rgb(254, 145, 145);
+  font-size: 14px;
+}

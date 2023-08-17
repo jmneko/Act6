@@ -36,4 +36,13 @@ export class UsersService {
     return lastValueFrom(this.httpClient.delete<any>(`${this.baseUrl}${_id}`))
   }
 
+
+  insert(formValue: any): Promise<any> {
+    return lastValueFrom(this.httpClient.post<User>(this.baseUrl, formValue));
+  }
+
+  update(formValue: any) : Promise<any> {
+    return lastValueFrom( this.httpClient.put(`${this.baseUrl}${formValue._id}`, formValue) )
+  }
+
 }
