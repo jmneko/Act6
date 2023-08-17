@@ -1,5 +1,5 @@
 import { Component, Input, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import Swal from 'sweetalert2';
@@ -16,6 +16,7 @@ export class UserCardComponent {
   @Input() miUser: User | any;
   usersServices = inject(UsersService);
   router = inject(Router)
+  activatedRoute = inject(ActivatedRoute)
   oneUser!: User | any;
 
 
@@ -50,7 +51,7 @@ export class UserCardComponent {
           this.router.navigate(['/home']);
         } catch (error) {
           console.log(error);
-          Swal.fire('Error', 'An error occurred while deleting the user.', 'error');
+          Swal.fire('Error', 'Ha ocurrido un error en el borrado del usuario', 'error');
         }
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire(
