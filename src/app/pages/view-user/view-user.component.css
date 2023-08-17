@@ -22,8 +22,14 @@
   color: rgb(255, 255, 255);
 }
 
-.selector {
+.selector_title {
+  text-align: center;
   margin-top: 5%;
+  color: rgb(175, 174, 171);
+}
+
+.selector {
+  margin-top: 2%;
   margin-left: 9%;
   display: flex;
   width: 80%;
