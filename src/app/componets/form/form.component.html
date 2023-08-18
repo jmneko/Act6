@@ -45,7 +45,8 @@
             <p class="error" *ngIf="checkControl('password', 'required')">Debe rellenar este campo.</p>
         </div>
 
-        <input type="submit" class="btn btn-outline-info border-2" [disabled]="!userForm.valid">
+        <input type="submit" class="btn btn-outline-info border-2" [disabled]="!userForm.valid"
+            [value]="getSubmitButtonText()">
 
 
         <img src="https://cdn.kibrispdr.org/data/781/phoenix-logo-png-2.png" alt="Logo" width="430" height="300"

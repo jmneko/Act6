@@ -118,4 +118,12 @@ export class FormComponent {
     return this.userForm.get(controlName)?.hasError(Validator) && this.userForm.get(controlName)?.dirty;
   }
 
+  FormEdit(): boolean {
+    return !!this.userForm.value._id;
+  }
+
+  getSubmitButtonText(): string {
+    return this.FormEdit() ? 'Actualizar' : 'Guardar';
+  }
+
 }
