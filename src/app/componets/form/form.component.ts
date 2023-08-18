@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
 import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form',
@@ -94,10 +95,20 @@ export class FormComponent {
     //ACTUALIZAR
       let response = await this.usersService.update(this.userForm.value)
       if (response.id){
-        alert('Objeto actualizado');
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario actualizado correctamente',
+          showConfirmButton: false,
+          timer: 2000
+        })
         this.router.navigate(['/home']);
       } else {
-        alert('error en la actualizacion')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error, usuario NO actualizado',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
       }
 
     } else {
@@ -105,10 +116,20 @@ export class FormComponent {
     //INSERTAR
       let response = await this.usersService.insert(this.userForm.value);
       if(response.id) {
-        alert('Usuario insertado correctamente');
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario introducido correctamente',
+          showConfirmButton: false,
+          timer: 2000
+        })
         this.router.navigate(['/home']);
       } else {
-        alert('Has cometido un error, usuario NO introducido')
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error, usuario no introducido',
+          footer: '<a href="">Why do I have this issue?</a>'
+        })
       }
     }
 
