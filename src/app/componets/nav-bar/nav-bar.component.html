@@ -1,23 +1,26 @@
-<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="https://cdn.kibrispdr.org/data/781/phoenix-logo-png-2.png" alt="Logo" width="75" height="50"
-                class="d-inline-block align-text-top">
-        </a>
-        <p class="fs-1 fw-bold" [routerLink]="['/home']">ACTIVIDAD 6</p>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header>
 
-        <ul class="navbar-nav me-5">
-            <li class="nav-item justify-content-end me-3">
-                <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLinkActive="active" [routerLink]="['/newuser']">Nuevo Usuario</a>
-            </li>
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid prueba">
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn.kibrispdr.org/data/781/phoenix-logo-png-2.png" alt="Logo" width="75" height="50"
+                    class="d-inline-block align-text-top">
+            </a>
+            <p class="fs-1 fw-bold" [routerLink]="['/home']">ACTIVIDAD 6</p>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        </ul>
-    </div>
-</nav>
+            <ul class="navbar-nav me-5">
+                <li class="nav-item justify-content-end me-3">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" [routerLink]="['/newuser']">Nuevo Usuario</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
