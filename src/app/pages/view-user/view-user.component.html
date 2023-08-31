@@ -1,13 +1,13 @@
 <section class="container mt-3">
     <h1 class="name text-center text-uppercase">{{oneUser?.first_name}}
         {{oneUser.last_name}}</h1>
-    <div class="mt-5 d-flex align-items-center">
+    <div class="mt-5 d-flex align-items-center flex-wrap">
         <div class="flex-shrink-0">
             <img src="{{oneUser.image}}" alt="{{oneUser?.username}}"
                 class="img-fluid rounded border border-warning border-4 shadow rotate-scale-up-horizontal">
         </div>
 
-        <div class="user flex-grow-1">
+        <div class="user flex-grow-1 align-items-center">
             <p class="data">DATOS</p>
             <p class="data__user"><strong>Nombre de usuario:</strong> {{oneUser.username}}</p>
             <p class="data__user"><strong>Email:</strong> {{oneUser.email}}</p>
